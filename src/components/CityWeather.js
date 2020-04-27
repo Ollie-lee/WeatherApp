@@ -1,13 +1,12 @@
 import React from 'react';
+import Unsplash from 'unsplash-js';
+
 
 const name = 'Sydney';
 const API_key = '8ae4a4a4221168957021b5693160e4ee';
 const api = `http://api.openweathermap.org/data/2.5/forecast?q=${name}&appid=${API_key}&units=metric`
+const unsplash = new Unsplash({ accessKey: "SllxWPp-wGVqjiAS-oLIoJn44Az5rzylFc1zPtDveg8" });
 
-// const targetCity = cities.filter((city)=>city.name==='Adelaide');
-// const API_key = '8ae4a4a4221168957021b5693160e4ee';
-// const city = 'Adelaide';
-// const api = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_key}`;
 
 export default class CityWeather extends React.Component {
 
@@ -17,7 +16,7 @@ export default class CityWeather extends React.Component {
         this.state = {
             isLoading: true,
             temp: 0,
-            description:'',
+            description: '',
         }
 
     }
@@ -26,14 +25,15 @@ export default class CityWeather extends React.Component {
 
     async componentDidMount() {
         const response = await (await fetch(api)).json();
-        console.log(response);
         const { list } = response;
+
+
         this.setState({
-            temp: list[1].main.temp,
+            temp: Math.round(list[1].main.temp),
             isLoading: false,
             description: list[1].weather[0].description
         })
-        
+
     }
 
     render() {
@@ -41,13 +41,14 @@ export default class CityWeather extends React.Component {
 
         return (
             <div>
-                <h3>Adelaide</h3>
+                <h3 className='card--main--city'>Adelaide</h3>
                 {isLoading && <h2>Is Loading</h2>}
-                {!isLoading && description}
-                <br/>
-                {!isLoading && temp }
-                
-                
+                {!isLoading && <span className='card--main--temp'>{temp + `℃`}</span>}
+                <br />
+                <br />
+                {!isLoading && <span className='card--main--description'>{description}</span>}
+
+
             </div>
         );
     }

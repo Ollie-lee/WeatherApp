@@ -1,11 +1,43 @@
-header{
+header {
     margin-left: 1rem;
     margin-top: .5rem;
 }
 
-.card{
+.card {
+    background-image: url();
 
-    &--main{
-        background-image: url(https://www.freepik.com/free-vector/blue-sky-with-shiny-clouds-background_6864892.htm#page=1&query=weather%20background&position=17);
+    &--main {
+        background-image: url(./utility/backgr.jpg);
+        width: 70vw;
+        min-width: 70vw;
+        height: 40vh;
+        color: white;
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 10px;
+
+        &--city {
+            position: absolute;
+            right: 2.5rem; 
+            top: -1rem;          
+            text-align: right;
+            font-size: 2rem;
+        }
+
+        &--temp{
+            position: absolute;
+            top: 0;
+            left: 1.5rem;
+            font-size: 3rem;
+        }
+
+        &--description{
+            position: absolute;
+            top: 4rem;
+            left: 1.5rem;
+            font-size: 2rem;
+        }
+
     }
 }
