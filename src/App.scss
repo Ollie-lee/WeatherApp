@@ -3,17 +3,28 @@ header {
     margin-top: .5rem;
 }
 
+header{
+    color: #ddd;
+}
+
+body{
+    background-image: url(./utility/backgr3.jpg);
+}
+
 .card {
     background-image: url();
 
     &--main {
+
         &--container {
-            width: 70vw;
+            width: 80vw;
             color: #ddd;
             margin: 0 auto;
             text-align: center;
-            border-radius: 10px;
-            background-image: url(./utility/backgr.jpg);
+            border-radius: 10px 10px 0 0;
+            background-image: url(./utility/backgr.jpg) ;
+            background-repeat: no-repeat;
+            background-size: cover;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -62,6 +73,26 @@ header {
                     background-color: #ddd;
                 }
             }
+        }
+    }
+
+    &--details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        width: 80vw;
+        background-color: #ddd;
+        height: 50vh;
+        margin-bottom: 10vh;
+        border-radius: 0 0 10px 10px;
+
+        &--left {
+            color: #9900FF;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bolder;
         }
     }
 }
