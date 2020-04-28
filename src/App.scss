@@ -5,41 +5,63 @@ header {
 
 .card {
     background-image: url();
-    display: flex;
-    flex-wrap: wrap;
 
     &--main {
-        background-image: url(./utility/backgr.jpg);
-        width: 70vw;
-        min-width: 70vw;
-        height: 40vh;
-        color: white;
-        text-align: center;
-        position: relative;
-        margin: 0 auto;
-        border-radius: 10px;
+        &--container {
+            width: 70vw;
+            color: #ddd;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 10px;
+            background-image: url(./utility/backgr.jpg);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
 
-        &--city {
-            position: absolute;
-            right: 2.5rem;
-            top: -1rem;
-            text-align: right;
-            font-size: 2rem;
+            &--left {
+
+                &>div:nth-of-type(3),
+                &>div:nth-of-type(4) {
+                    display: inline-block;
+                    margin-top: 1rem;
+                }
+
+                &>div:nth-of-type(3) {
+                    padding-right: 1.5rem;
+                    border-right: 2px solid #ddd;
+                    margin-bottom: .5rem;
+                }
+
+                &>div:nth-of-type(4) {
+                    padding-left: 1.5rem;
+                }
+
+                &--description {
+                    font-size: 1rem;
+                }
+
+                &--temp {
+                    font-size: 3rem;
+                }
+            }
+
+            &--city {
+                font-size: 2rem;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    bottom: 0;
+                    width: 100px;
+                    height: 2px;
+                    background-color: #ddd;
+                }
+            }
         }
-
-        &--temp {
-            position: absolute;
-            top: 0;
-            left: 1.5rem;
-            font-size: 3rem;
-        }
-
-        &--description {
-            position: absolute;
-            top: 4rem;
-            left: 1.5rem;
-            font-size: 2rem;
-        }
-
     }
 }
