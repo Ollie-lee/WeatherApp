@@ -28,11 +28,11 @@ export default class ForecastList extends React.Component {
                 { temp: response.list[16].main.temp, description: response.list[16].weather[0].main },
                 { temp: response.list[24].main.temp, description: response.list[24].weather[0].main },
                 { temp: response.list[32].main.temp, description: response.list[32].weather[0].main },
-                { temp: response.list[39].main.temp, description: response.list[39].weather[0].main3 },
+                { temp: response.list[39].main.temp, description: response.list[39].weather[0].main },
             ],
             isLoading:false
         })
-        
+        console.log(response);
     }
 
     render() {

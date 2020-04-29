@@ -16,18 +16,20 @@ export default class ForecastItem extends React.Component {
     render() {
         const { temp, description } = this.state;
         let icon;
-        if (description.toLowerCase().indexOf('rain') !== -1) {
+        if (String(description).toString().toLowerCase().indexOf('rain') !== -1) {
             icon = 'wi wi-owm-502';
-        } else if (description.toLowerCase().indexOf('cloud') !== -1) {
-            icon = 'wi-owm-804';
-        } else if (description.toLowerCase().indexOf('sun') !== -1) {
-            icon = 'wi-owm-800';
-        } else if (description.toLowerCase().indexOf('snow') !== -1) {
-            icon = 'wi-owm-621';
-        } else if (description.toLowerCase().indexOf('thunder') !== -1) {
-            icon = 'wi-owm-202';
+        } else if (String(description).toString().indexOf('cloud') !== -1) {
+            icon = 'wi wi-owm-804';
+        } else if (String(description).toString().toLowerCase().indexOf('sun') !== -1) {
+            icon = 'wi wi-owm-800';
+        } else if (String(description).toString().toLowerCase().indexOf('snow') !== -1) {
+            icon = 'wi wi-owm-621';
+        } else if (String(description).toString().toLowerCase().indexOf('thunder') !== -1) {
+            icon = 'wi wi-owm-202';
+        } else if (String(description).toString().toLowerCase().indexOf('clear') !== -1) {
+            icon = 'wi wi-day-light-wind'
         } else {
-            icon = 'wi wi-na';
+            icon = 'wi wi-day-cloudy';
         }
         return (
             <>
