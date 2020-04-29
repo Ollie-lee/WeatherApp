@@ -1,6 +1,7 @@
 import React from 'react';
 import CityWeather from './CityWeather';
 import Time from './Time';
+import ForecastList from './ForecastList';
 
 const Main = () => {
     return (
@@ -10,11 +11,9 @@ const Main = () => {
                     <CityWeather />
                 </div>
                 <div className='card--details'>
-                    <div className='card--details--left'>
+                    <div className='card--details--container'>
                         <Time />
-                    </div>
-                    <div className='card--details--right'>
-                        
+                        <ForecastList />
                     </div>
                 </div>
             </div>

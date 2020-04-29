@@ -5,7 +5,7 @@ export default class Time extends React.Component {
     constructor() {
         super();
         this.state = {
-            
+
             hour: moment()._d.getHours(),
             min: moment()._d.getMinutes(),
             sec: moment()._d.getSeconds(),
@@ -16,7 +16,7 @@ export default class Time extends React.Component {
     componentDidMount() {
         this.timer = setInterval(() => {
             this.setState({
-                
+
                 hour: moment()._d.getHours(),
                 min: moment()._d.getMinutes(),
                 sec: moment()._d.getSeconds(),
@@ -30,14 +30,12 @@ export default class Time extends React.Component {
     }
 
     render() {
-        const {hour, min, sec, day } = this.state;
-        console.log(moment());
+        const { hour, min, sec, day } = this.state;
         return (
-            <>
+            <div className='card--details--container--time'>
                 <div>{day}</div>
-                <br></br>
                 <div><span>{hour}</span>:<span>{min}</span>:{sec}</div>
-            </>
+            </div>
         )
     }
 }

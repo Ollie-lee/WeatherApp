@@ -2,7 +2,7 @@ import React from 'react';
 import Unsplash from 'unsplash-js';
 
 
-const name = 'Sydney';
+const name = 'Adelaide';
 const API_key = '8ae4a4a4221168957021b5693160e4ee';
 const api = `http://api.openweathermap.org/data/2.5/forecast?q=${name}&appid=${API_key}&units=metric`
 const unsplash = new Unsplash({ accessKey: "SllxWPp-wGVqjiAS-oLIoJn44Az5rzylFc1zPtDveg8" });
@@ -27,8 +27,7 @@ export default class CityWeather extends React.Component {
 
     async componentDidMount() {
         const response = await (await fetch(api)).json();
-        console.log(response);
-        const { list: [zero, { wind: { speed }, main: { temp, humidity }, weather: [{ description }] }] } = response;
+        const { list: [ , { wind: { speed }, main: { temp, humidity }, weather: [{ description }] }] } = response;
 
 
         this.setState({
