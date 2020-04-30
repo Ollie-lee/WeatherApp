@@ -17,7 +17,7 @@ export default class ForecastItem extends React.Component {
         const { temp, description } = this.state;
         let icon;
         if (String(description).toString().toLowerCase().indexOf('rain') !== -1) {
-            icon = 'wi wi-owm-502';
+            icon = 'wi wi-showers';
         } else if (String(description).toString().indexOf('cloud') !== -1) {
             icon = 'wi wi-owm-804';
         } else if (String(description).toString().toLowerCase().indexOf('sun') !== -1) {
@@ -34,7 +34,7 @@ export default class ForecastItem extends React.Component {
         return (
             <>
                 <div>
-                    <i className={icon}></i>
+                    <i className={`${icon} card--details--container--list--icon`}></i>
                 </div>
                 <div>
                     {Math.round(temp) + `℃`}

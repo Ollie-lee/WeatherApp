@@ -97,8 +97,9 @@ body {
 
 
             &--time{
-                font-size: 1rem;
+                font-size: 1.2rem;
                 flex: 0 0 20%;
+                font-family: cursive;
             }
 
             &--list {
@@ -109,6 +110,11 @@ body {
                 justify-content: space-around;
                 flex: 0 0 65%;
                 border-left:4px solid ;
+
+                &--icon{
+                    font-size: 2rem;
+                    margin-bottom: .5rem;
+                }
             }
         }
     }
