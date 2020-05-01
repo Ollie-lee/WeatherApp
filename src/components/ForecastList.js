@@ -15,13 +15,14 @@ export default class ForecastList extends React.Component {
         this.state = {
             isLoading: true,
             items: [{}, {}, {}, {}, {}],
+            city:this.props.city,
         }
     }
 
     async componentDidMount() {
         // const response = await (await fetch(proxyurl + api));
         // const forecastData = response.json().then((value) => { console.log(value) });
-        const response = await (await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${this.props.city}&appid=${API_key}&units=metric`)).json();
+        const response = await (await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=${API_key}&units=metric`)).json();
         this.setState({
             items: [
                 { temp: response.list[8].main.temp, description: response.list[8].weather[0].main },
