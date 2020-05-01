@@ -14,6 +14,7 @@ body {
 .card {
     background-image: url();
     margin-top: 1.5rem;
+
     &--main {
 
         &--container {
@@ -29,6 +30,22 @@ body {
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
+
+            &--left,
+            &--city,
+            &--search {
+                flex: 0 0 50%;
+            }
+
+            &--search {
+                // align-self: flex-start;
+                // justify-content: flex-end;
+                // align-content: flex-start;
+
+                &--form {
+                    color: #ddd;
+                }
+            }
 
             &--left {
 
@@ -59,7 +76,7 @@ body {
 
             &--city {
                 font-size: 2rem;
-                position: relative;
+
 
                 &::after {
                     content: '';
@@ -96,7 +113,7 @@ body {
             align-items: center;
 
 
-            &--time{
+            &--time {
                 font-size: 1.2rem;
                 flex: 0 0 20%;
                 font-family: cursive;
@@ -109,9 +126,9 @@ body {
                 font-size: 1rem;
                 justify-content: space-around;
                 flex: 0 0 65%;
-                border-left:4px solid ;
+                border-left: 4px solid;
 
-                &--icon{
+                &--icon {
                     font-size: 2rem;
                     margin-bottom: .5rem;
                 }

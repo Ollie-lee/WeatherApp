@@ -6,15 +6,13 @@ export default class ForecastItem extends React.Component {
         super(props);
 
         this.state = {
-            temp: this.props.temp,
-            description: this.props.description,
         }
     }
 
 
 
     render() {
-        const { temp, description } = this.state;
+        const { temp, description } = this.props;
         let icon;
         if (String(description).toString().toLowerCase().indexOf('rain') !== -1) {
             icon = 'wi wi-showers';
