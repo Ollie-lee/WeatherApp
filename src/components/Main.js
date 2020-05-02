@@ -61,7 +61,7 @@ class Main extends React.Component {
     async handleCitySearch(e) {
         e.preventDefault()
         // const { city } = this.state;
-        const api = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=${API_key}&units=metric`;
+        const api = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=${API_key}&units=metric`;
         const response = await (await fetch(api)).json();
         try {
             const { list: [, { wind: { speed }, main: { temp, humidity }, weather: [{ description }] }] } = response;
